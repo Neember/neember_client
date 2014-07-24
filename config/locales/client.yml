@@ -1,0 +1,28 @@
+en:
+  client:
+    message:
+      create_success: 'Client is created'
+      create_failed: 'Failed to create client'
+      update_success: 'Client is updated'
+      update_failed: 'Failed to update client'
+      delete_success: 'Client is deleted'
+      delete_failed: 'Failed to delete client'
+      delete_confirmation: 'Confirm delete this client?'
+  helpers:
+    label:
+      client:
+        title: 'Title'
+        first_name: 'First name'
+        last_name: 'Last name'
+        designation: 'Designation'
+        email: 'Email'
+        phone: 'Phone'
+        address: 'Address'
+        company_name: 'Company name'
+        action: 'Action'
+  activerecord:
+    errors:
+      models:
+        client:
+          blank: "Please fill in %{attribute}"
+          invalid: 'Please fill in the correct format of %{attribute}'
