@@ -30,6 +30,8 @@ gem 'bootstrap_form', '~> 2.1.1' #Bootstrap Form builder for Rails form_for
 gem 'rails_utils' # Generate flash message (Bootstrap)
 gem 'will_paginate', '~> 3.0' # Rails pagination
 gem 'will_paginate-bootstrap' # Bootstrap renderer for will_paginate
+gem 'simple-navigation'
+gem 'simple-navigation-bootstrap'
 gem 'enumerize' # Enum in Rails
 gem 'devise'
 

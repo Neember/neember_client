@@ -23,3 +23,10 @@ clients_data.each do |client_data|
 end
 
 puts 'Clients seeded'
+
+puts 'Start seeding admin'
+Admin.first_or_create!({
+   email: 'stevenyap@futureworkz.com',
+   password: '123456789'
+ })
+puts 'Admin seeded'

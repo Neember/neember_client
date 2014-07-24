@@ -8,6 +8,21 @@
     = csrf_meta_tags
   %body
     .wrapper.container-fluid
+      .header.row
+        .container
+          .topbar
+            .container
+              %ul.loginbar.pull-right
+                - if current_admin.present?
+                  %li= "Welcome #{current_admin.email}"
+                  %li.topbar-devider
+                  %li= link_to 'Logout', destroy_admin_session_path, method: :delete
+                - else
+                  %li= link_to 'Login', new_admin_session_path
+          .navbar.navbar-default
+            .navbar-header
+              = link_to(image_tag('neember-logo.png', height: 40), root_path)
+            = render_navigation expand_all: true, renderer: :bootstrap
       .main-body
         .container
           - if flash_messages.present?

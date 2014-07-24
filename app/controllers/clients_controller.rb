@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   # before_filter :authenticate_user!
-  # before_filter :authenticate_admin!
+  before_filter :authenticate_admin!
 
   def index
     @clients = Client.paginate(page: page)
