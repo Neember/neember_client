@@ -118,7 +118,7 @@ describe ClientsController do
 
   describe 'delete #destroy' do
     context 'success' do
-      let!(:client){ create(:client)}
+      let!(:client) { create(:client)}
 
       def do_request
         get :destroy, id: client.id
@@ -131,6 +131,24 @@ describe ClientsController do
 
         expect(response).to redirect_to clients_path
         expect(flash[:notice]).to_not be_nil
+      end
+    end
+  end
+
+  describe 'get #show' do
+    context 'show detail client' do
+      let!(:client) { create :client }
+      def do_request
+        get :show, id: client.id, format: :json
+      end
+
+      it 'render template show client detail and finds client' do
+        sign_in admin
+
+        do_request
+
+        expect(response).to render_template :show
+        expect(assigns(:client)).to_not be_nil
       end
     end
   end

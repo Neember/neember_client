@@ -45,6 +45,10 @@ class ClientsController < ApplicationController
     end
   end
 
+  def show
+    @client = Client.find(client_id)
+  end
+
   protected
   def client_id
     params.require(:id)
