@@ -138,13 +138,21 @@ describe ClientsController do
   describe 'get #show' do
     context 'show detail client' do
       let!(:client) { create :client }
+
       def do_request
         get :show, id: client.id, format: :json
+      end
+
+      # login to http basic auth
+      include AuthHelper
+      before(:each) do
+        http_login
       end
 
       it 'render template show client detail and finds client' do
         sign_in admin
 
+        ActionController::HttpAuthentication::Basic.encode_credentials(ENV['AUTHENTICATE_USER_NAME'], ENV['AUTHENTICATE_PASSWORD'])
         do_request
 
         expect(response).to render_template :show
