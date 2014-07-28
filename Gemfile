@@ -41,6 +41,10 @@ group :development do
   gem 'pry'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :test do
   gem 'awesome_print'
   gem 'rspec-rails'
