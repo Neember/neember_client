@@ -34,6 +34,7 @@ gem 'simple-navigation'
 gem 'simple-navigation-bootstrap'
 gem 'enumerize' # Enum in Rails
 gem 'devise'
+gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'spring'
