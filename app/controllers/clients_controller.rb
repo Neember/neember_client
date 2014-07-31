@@ -1,10 +1,5 @@
 class ClientsController < ApplicationController
-  USER_NAME = ENV['AUTHENTICATE_USER_NAME']
-  PASSWORD = ENV['AUTHENTICATE_PASSWORD']
-
-# before_filter :authenticate_user!
   before_filter :authenticate_admin!
-  before_action :authenticate
 
   def index
     @clients = Client.paginate(page: page)
@@ -49,10 +44,6 @@ class ClientsController < ApplicationController
     end
   end
 
-  def show
-    @client = Client.find(client_id)
-  end
-
   protected
   def client_id
     params.require(:id)
@@ -64,14 +55,5 @@ class ClientsController < ApplicationController
 
   def client_param
     params.require(:client).permit(:title, :first_name, :last_name, :email, :phone, :address, :company_name, :designation)
-  end
-
-  def authenticate
-    case request.format
-    when Mime::JSON
-      authenticate_or_request_with_http_basic do |user_name, password|
-        user_name == USER_NAME && password == PASSWORD
-      end
-    end
   end
 end
