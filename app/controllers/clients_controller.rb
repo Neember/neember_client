@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
   PASSWORD = ENV['AUTHENTICATE_PASSWORD']
 
 # before_filter :authenticate_user!
-# before_filter :authenticate_admin!
+  before_filter :authenticate_admin!
   before_action :authenticate
 
   def index
