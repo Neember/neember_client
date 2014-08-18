@@ -25,8 +25,18 @@ end
 puts 'Clients seeded'
 
 puts 'Start seeding admin'
-Admin.first_or_create!({
-   email: 'stevenyap@futureworkz.com',
-   password: '123456789'
- })
+
+admins_data = [
+  { email: 'stevenyap@futureworkz.com' },
+  { email: 'iker@futureworkz.com' },
+  { email: 'jack@futureworkz.com' },
+  { email: 'martin@futureworkz.com' }
+
+]
+
+admins_data.each do |admin_data|
+  admin = Admin.find_or_initialize_by(admin_data)
+  admin.password = '123456789'
+  admin.save
+end
 puts 'Admin seeded'
