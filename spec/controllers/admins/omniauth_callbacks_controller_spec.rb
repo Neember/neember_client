@@ -12,8 +12,9 @@ describe Admins::OmniauthCallbacksController do
     end
 
     context 'User using futureworkz.com domain' do
+      before { create :admin, email: 'martin@futureworkz.com' }
       it 'authenticates user' do
-        expect { do_request }.to change(Admin, :count).by(1)
+        expect { do_request }.to change(Admin, :count).by(0)
         expect(controller.admin_signed_in?).to be_truthy
       end
     end

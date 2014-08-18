@@ -9,14 +9,6 @@ class Admin < ActiveRecord::Base
 
   def self.find_for_google_oauth2(access_token)
     data = access_token.info
-    admin = Admin.where(email: data['email']).first
-
-    unless admin
-      admin = Admin.create(
-        email: data['email'],
-        password: Devise.friendly_token[0, 20]
-      )
-    end
-    admin
+    Admin.where(email: data['email']).first
   end
 end

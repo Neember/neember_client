@@ -3,7 +3,7 @@ class Admins::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     @admin = Admin.find_for_google_oauth2(google_authenticated_data)
 
-    if @admin.persisted?
+    if @admin
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
       sign_in_and_redirect @admin, event: :authentication
     else

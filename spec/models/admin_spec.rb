@@ -35,7 +35,7 @@ describe Admin do
       let(:admin) { build(:admin) }
 
       it 'creates a new user' do
-        expect { Admin.find_for_google_oauth2(access_token) }.to change(Admin, :count).by(1)
+        expect(Admin.find_for_google_oauth2(access_token)).to be_falsey
       end
     end
   end
