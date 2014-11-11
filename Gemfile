@@ -10,7 +10,7 @@ gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
 gem 'haml' #Layout engine
-gem 'bootstrap_form', '~> 2.1.1' #Bootstrap Form builder for Rails form_for
+gem 'bootstrap_form', '~> 2.2.0' #Bootstrap Form builder for Rails form_for
 gem 'rails_utils' # Generate flash message (Bootstrap)
 gem 'will_paginate', '~> 3.0' # Rails pagination
 gem 'will_paginate-bootstrap' # Bootstrap renderer for will_paginate
